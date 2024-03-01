@@ -8,8 +8,8 @@ namespace Pr2
 
         static void Main(string[] args)
         {
-            Task1();
-            //Task2();
+            //Task1();
+            Task2();
             //Task3();
             //Task4();
         }
@@ -38,6 +38,63 @@ namespace Pr2
             Console.WriteLine("]");
         }
 
+        static void Task2()
+        {
+            int side1 = 7;
+            int side2 = 7;
+            int side3 = 12;
+
+            if (IsTriangle(side1, side2, side3))
+            {
+                double area = Area(side1, side2, side3);
+                int perimetr = Perimetr(side1, side2, side3);
+                string triangleType = TriangleType(side1, side2, side3);
+
+                Console.WriteLine($"Perimetr of triangle: {perimetr}");
+                Console.WriteLine($"Area of triangle: {area}");
+                Console.WriteLine($"Type of triangle: {triangleType}");
+            }
+            else
+            {
+                Console.WriteLine("Triangle doesn't exist.");
+            }
+
+           
+
+            static bool IsTriangle(int side1, int side2, int side3)
+            {
+                return (side1 + side2 > side3) && (side1 + side3 > side2) && (side2 + side3 > side1);
+            }
+
+            static int Perimetr(int side1, int side2, int side3)
+            {
+                return side1 + side2 + side3;
+            }
+
+            static double Area(int side1, int side2, int side3)
+            {
+                double s = (side1 + side2 + side3) / 2.0;
+                return Math.Sqrt(s * (s - side1) * (s - side2) * (s - side3));
+
+            }
+
+            static string TriangleType(int side1, int side2, int side3)
+            {
+                if (side1 == side2 && side2 == side3)
+                {
+                    return "Equilateral";
+                }
+                else if (side1 == side2 || side1 == side3 || side2 == side3)
+                {
+                    return "Isosceles";
+                }
+                else
+                {
+                    return "Scalene";
+                }
+            }
+            
+        }
 
     }
 }
