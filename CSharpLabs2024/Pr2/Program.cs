@@ -8,12 +8,13 @@ namespace Pr2
 
         static void Main(string[] args)
         {
-            //Task1();
-            //Task2();
+            Task1();
+            Task2();
             Task3();
-            //Task4();
+            Task4();
         }
-
+        
+        //---Task1---
         static void Task1()
         {
             int[] numbers = { 4, 6, 12 };
@@ -37,7 +38,8 @@ namespace Pr2
 
             Console.WriteLine("]");
         }
-
+        
+        //---Task2---
         static void Task2()
         {
             int side1 = 8;
@@ -92,9 +94,9 @@ namespace Pr2
 
                 return "Scalene";
             }
-            
         }
-
+        
+        //---Task3---
         static void Task3()
         {
             int[] x = new int[N];
@@ -132,6 +134,62 @@ namespace Pr2
 
             Console.WriteLine($"Max number: {max}");
             Console.WriteLine($"Min number: {min}");
+        }
+        
+        //---Task4---
+        static void Task4()
+        {
+            int[] x = new int[N];
+            Random rng = new Random();
+            
+            for (int i = 0; i < x.Length; i++)
+            {
+                x[i] = rng.Next(-100, 100);
+            }
+
+            Console.Write("Array X: ");
+            PrintArray(x);
+
+            Console.Write("Enter M number: ");
+            int m = int.Parse(Console.ReadLine());
+
+            int ySize = 0;
+
+            foreach (int elem in x)
+            {
+                if (Math.Abs(elem) > m)
+                {
+                    ySize++;
+                }
+            }
+
+            int[] y = new int[ySize];
+            int yIndex = 0;
+
+            foreach (int elem in x)
+            {
+                if (Math.Abs(elem) > m)
+                {
+                    y[yIndex] = elem;
+                    yIndex++;
+                }
+            }
+            
+            Console.Write("Array Y: ");
+            PrintArray(y);
+            Console.WriteLine("(Array Y contains numbers from array X which abs is greater then number M)");
+
+            static void PrintArray(int[] arr)
+            {
+                Console.Write("[ ");
+                foreach (int elem in arr)
+                {
+                    Console.Write($"{elem} ");
+                }
+
+                Console.WriteLine("]");
+            }
+
         }
 
     }
