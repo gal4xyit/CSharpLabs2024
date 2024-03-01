@@ -40,7 +40,7 @@ namespace Pr2
 
         static void Task2()
         {
-            int side1 = 7;
+            int side1 = 8;
             int side2 = 7;
             int side3 = 12;
 
@@ -84,14 +84,13 @@ namespace Pr2
                 {
                     return "Equilateral";
                 }
-                else if (side1 == side2 || side1 == side3 || side2 == side3)
+
+                if (side1 == side2 || side1 == side3 || side2 == side3)
                 {
                     return "Isosceles";
                 }
-                else
-                {
-                    return "Scalene";
-                }
+
+                return "Scalene";
             }
             
         }
