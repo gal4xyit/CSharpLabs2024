@@ -9,8 +9,8 @@ namespace Pr2
         static void Main(string[] args)
         {
             //Task1();
-            Task2();
-            //Task3();
+            //Task2();
+            Task3();
             //Task4();
         }
 
@@ -47,10 +47,10 @@ namespace Pr2
             if (IsTriangle(side1, side2, side3))
             {
                 double area = Area(side1, side2, side3);
-                int perimetr = Perimetr(side1, side2, side3);
+                int perimeter = Perimeter(side1, side2, side3);
                 string triangleType = TriangleType(side1, side2, side3);
 
-                Console.WriteLine($"Perimetr of triangle: {perimetr}");
+                Console.WriteLine($"Perimeter of triangle: {perimeter}");
                 Console.WriteLine($"Area of triangle: {area}");
                 Console.WriteLine($"Type of triangle: {triangleType}");
             }
@@ -66,7 +66,7 @@ namespace Pr2
                 return (side1 + side2 > side3) && (side1 + side3 > side2) && (side2 + side3 > side1);
             }
 
-            static int Perimetr(int side1, int side2, int side3)
+            static int Perimeter(int side1, int side2, int side3)
             {
                 return side1 + side2 + side3;
             }
@@ -93,6 +93,45 @@ namespace Pr2
                 return "Scalene";
             }
             
+        }
+
+        static void Task3()
+        {
+            int[] x = new int[N];
+
+            Random rng = new Random();
+            
+            for (int i = 0; i < x.Length; i++)
+            {
+                x[i] = rng.Next(0, 100);
+            }
+
+            int max = x[0];
+            int min = x[0];
+
+            foreach (int elem in x)
+            {
+                if (elem > max)
+                {
+                    max = elem;
+                }
+
+                if (elem < min)
+                {
+                    min = elem;
+                }
+            }
+
+            Console.Write("Array: [ ");
+            foreach (int elem in x)
+            {
+                Console.Write($"{elem} ");
+            }
+
+            Console.WriteLine("]");
+
+            Console.WriteLine($"Max number: {max}");
+            Console.WriteLine($"Min number: {min}");
         }
 
     }
