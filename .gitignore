@@ -396,3 +396,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Custom
+Assets/SceneDependencyCache*
+Assets/NetCodeGenerated*
+.idea/
+.DS_Store
+RiderScriptEditorPersistedState.asset
