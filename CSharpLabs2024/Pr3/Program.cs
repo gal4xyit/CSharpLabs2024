@@ -8,6 +8,7 @@ class Program
         Book book1 = new Book("Romeo and Juliet", "William Shakespeare", "Romeo and Juliet is a tragedy written by William Shakespeare early in his career about the romance between two Italian youths from feuding families.");
         book1.Show();
 
+        //Task2
         Point point1 = new Point(1,1,"A");
         Point point2 = new Point(2,3,"B");
         Point point3 = new Point(4,4,"C");
@@ -15,9 +16,6 @@ class Program
 
         Figure figure1 = new Figure(point1, point2, point3, point4);
 
-        Console.WriteLine(figure1.PerimeterCalculator());
-
-        
-        
+        Console.WriteLine($"The perimeter of polygon({figure1.GetName()}) is {Math.Round(figure1.PerimeterCalculator(),1)}");
     }
 }

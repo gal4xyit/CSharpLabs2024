@@ -35,5 +35,17 @@ public class Figure
 
         return perimeter;
     }
+
+    public string GetName()
+    {
+        string name = String.Empty;
+
+        foreach (Point point in points)
+        {
+            name += point.Name;
+        }
+
+        return name;
+    }
     
 }
