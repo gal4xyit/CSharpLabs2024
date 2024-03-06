@@ -7,6 +7,17 @@ class Program
         //Task1
         Book book1 = new Book("Romeo and Juliet", "William Shakespeare", "Romeo and Juliet is a tragedy written by William Shakespeare early in his career about the romance between two Italian youths from feuding families.");
         book1.Show();
+
+        Point point1 = new Point(1,1,"A");
+        Point point2 = new Point(2,3,"B");
+        Point point3 = new Point(4,4,"C");
+        Point point4 = new Point(6,8,"D");
+
+        Figure figure1 = new Figure(point1, point2, point3, point4);
+
+        Console.WriteLine(figure1.PerimeterCalculator());
+
+        
         
     }
 }
